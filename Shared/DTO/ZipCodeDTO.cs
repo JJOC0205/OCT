@@ -9,22 +9,24 @@ using Microsoft.EntityFrameworkCore;
 
 namespace OCTOBER.Shared.DTO
 {
-    public class ZipCodeDTO
+    public class ZipcodeDTO
     {
         [StringLength(5)]
+        [Unicode(false)]
         public string Zip { get; set; } = null!;
         [StringLength(25)]
-        public string City { get; set; } = null!;
+        [Unicode(false)]
+        public string? City { get; set; }
         [StringLength(2)]
-        public char State { get; set; }
+        [Unicode(false)]
+        public string? State { get; set; }
         [StringLength(30)]
+        [Unicode(false)]
         public string CreatedBy { get; set; } = null!;
         public DateTime CreatedDate { get; set; }
         [StringLength(30)]
         [Unicode(false)]
         public string ModifiedBy { get; set; } = null!;
         public DateTime ModifiedDate { get; set; }
-
-
     }
 }

@@ -9,22 +9,18 @@ using Microsoft.EntityFrameworkCore;
 
 namespace OCTOBER.Shared.DTO
 {
-    public class SectionDTO
+    public class GradeConversionDTO
     {
         [Precision(8)]
-        public int SectionId { get; set; }
-        [Precision(8)]
-        public int CourseNo { get; set; }
-        [Precision(3)]
-        public byte SectionNo { get; set; }
-        public DateTime? StartDateTime { get; set; }
-        [StringLength(50)]
+        public int SchoolId { get; set; }
+        [StringLength(2)]
         [Unicode(false)]
-        public string? Location { get; set; }
-        [Precision(8)]
-        public int InstructorId { get; set; }
+        public string LetterGrade { get; set; } = null!;
+        public decimal GradePoint { get; set; }
         [Precision(3)]
-        public byte? Capacity { get; set; }
+        public byte MaxGrade { get; set; }
+        [Precision(3)]
+        public byte MinGrade { get; set; }
         [StringLength(30)]
         [Unicode(false)]
         public string CreatedBy { get; set; } = null!;
@@ -33,8 +29,5 @@ namespace OCTOBER.Shared.DTO
         [Unicode(false)]
         public string ModifiedBy { get; set; } = null!;
         public DateTime ModifiedDate { get; set; }
-        [Key]
-        [Precision(8)]
-        public int SchoolId { get; set; }
     }
 }
